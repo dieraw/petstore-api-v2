@@ -59,15 +59,3 @@
 * RestAssured
 * JUnit 5
 
-
-## Пример использования
-
-```java
-// Пример использования Pet API
-given()
-    .contentType(ContentType.JSON)
-    .body(new Pet(1, "Doggie", Arrays.asList("url1", "url2"), null, "available"))
-.when()
-    .post("/pet")
-.then()
-    .statusCode(200);
