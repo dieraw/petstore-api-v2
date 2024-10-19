@@ -87,6 +87,6 @@ public class StoreApiBoundaryTest {
                 .get(PetApiConfig.ORDER_ENDPOINT + "/" + aboveMaxValidId)
                 .then()
                 .statusCode(400) // Ожидаем ошибку
-                .body("message", equalTo("Order not found"));
+                .body("message", equalTo("Invalid ID supplied"));
     }
 }

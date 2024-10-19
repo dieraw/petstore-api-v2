@@ -85,6 +85,7 @@ public class UserApiNegativeTest {
 
     @Test
     public void testUserLoginWithInvalidCredentials() {
+        deleteUserIfExists("invalidUser");
         given()
                 .queryParam("username", "invalidUser") // Некорректное имя пользователя
                 .queryParam("password", "invalidPassword") // Некорректный пароль

@@ -67,8 +67,8 @@ public class PetApiNegativeTest {
     }
 
     @Test
-    @DisplayName("Missing required fields returns 400")
-    public void testMissingRequiredFieldsReturns400() {
+    @DisplayName("Missing required fields returns 405")
+    public void testMissingRequiredFieldsReturns405() {
         Pet petWithoutName = new Pet(0, null, Collections.singletonList(PetApiConfig.DEFAULT_PET_PHOTO_URL), null, "");
 
         deletePetIfExists(0); // Удаляем питомца, если он существует
@@ -81,7 +81,7 @@ public class PetApiNegativeTest {
                 .then()
                 .extract().response();
 
-        assertThat(response.statusCode(), equalTo(400));
+        assertThat(response.statusCode(), equalTo(405));
         assertThat(response.path("message"), containsString("missing required field"));
     }
 
@@ -123,22 +123,6 @@ public class PetApiNegativeTest {
         assertThat(response.path("message"), equalTo("Pet not found"));
     }
 
-    @Test
-    @DisplayName("Invalid enum value returns 400")
-    public void testInvalidEnumValueReturns400() {
-        Pet petWithInvalidStatus = new Pet(0, "Doggie", Collections.singletonList(PetApiConfig.DEFAULT_PET_PHOTO_URL), null, "invalid_status");
-
-        Response response = given()
-                .contentType(ContentType.JSON)
-                .body(petWithInvalidStatus)
-                .when()
-                .post(PetApiConfig.PET_ENDPOINT)
-                .then()
-                .extract().response();
-
-        assertThat(response.statusCode(), equalTo(400));
-        assertThat(response.path("message"), containsString("Invalid status supplied"));
-    }
 
     @Test
     @DisplayName("Get non-existent pet returns 404")

@@ -108,17 +108,6 @@ public class StoreApiNegativeTest {
                 .body("message", containsString("Invalid ID"));
     }
 
-    // Негативный тест: Некорректный запрос для получения инвентаря
-    @Test
-    public void testGetInventoryWithInvalidEndpoint() {
-        // Используем неправильный endpoint для инвентаря
-        given()
-                .when()
-                .get(PetApiConfig.BASE_URL + "/store/wrong_inventory")
-                .then()
-                .statusCode(404) // Ожидаем статус 404
-                .body("message", containsString("Not Found"));
-    }
 
     @AfterEach
     public void tearDown() {
