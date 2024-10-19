@@ -92,7 +92,7 @@ public class PetApiConfig {
 | `com.example.petstore.api.PetApiNegativeTest`     | 10           | 5       | 0            | 14.635s           | 50%        |
 | `com.example.petstore.api.PetApiTest`             | 6            | 0       | 0            | 5.068s            | 100%       |
 | `com.example.petstore.api.StoreApiBoundaryTest`   | 4            | 2       | 0            | 4.934s            | 50%        |
-| `com.example.petstore.api.StoreApiNegativeTest`   | 5            | 3       | 0            | 19.025s           | 33%        |
+| `com.example.petstore.api.StoreApiNegativeTest`   | 5            | 3       | 0            | 19.025s           | 40%        |
 | `com.example.petstore.api.StoreApiTest`           | 4            | 0       | 0            | 12.093s           | 100%       |
 | `com.example.petstore.api.UserApiNegativeTest`    | 6            | 4       | 0            | 6.948s            | 33%        |
 | `com.example.petstore.api.UserApiTest`            | 8            | 0       | 0            | 15.944s           | 100%       |
