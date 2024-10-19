@@ -1,0 +1,30 @@
+plugins {
+    id 'java'  // Поддержка Java
+    id 'application'  // Приложение
+}
+
+repositories {
+    mavenCentral()  // Maven Central для зависимостей
+}
+
+dependencies {
+    // Зависимости для тестирования
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+
+    // RestAssured для API тестов
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+
+    // AssertJ для удобных утверждений
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+
+    // Json для работы с JSON
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+
+    // Логирование
+    testImplementation 'org.slf4j:slf4j-simple:2.0.9'
+}
+
+test {
+    useJUnitPlatform()  // Указываем, что используем JUnit 5
+}
