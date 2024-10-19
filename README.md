@@ -29,13 +29,14 @@
 `PetApiConfig` — это класс конфигурации, содержащий настройки для взаимодействия с Petstore API. Он включает в себя базовый URL и пути к различным endpoint'ам, что упрощает процесс отправки запросов. Этот класс обеспечивает централизованное управление конфигурацией API, что позволяет легко изменять настройки в одном месте.
 
 ### Пример содержимого `PetApiConfig`:
-`java
+```java
 public class PetApiConfig {
     public static final String BASE_URL = "https://petstore.swagger.io/v2";
     public static final String PET_ENDPOINT = BASE_URL + "/pet/";
     public static final String FIND_BY_STATUS_ENDPOINT = BASE_URL + "/pet/findByStatus?status=";
     // Другие endpoints...
-}`
+}
+```
 
 ## Классы тестов
 
